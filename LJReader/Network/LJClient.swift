@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import AEXML
 
-typealias LJCompletionHandler = (success: Bool, result: Array<FeedEntry>?, error: NSError?) -> ()
+typealias LJCompletionHandler = (success: Bool, result: [FeedEntry]?, error: NSError?) -> ()
 
 class LJClient {
     static let sharedInstance = LJClient()
@@ -23,8 +23,9 @@ class LJClient {
         path: String,
         parameters: Dictionary<String, AnyObject>? = nil,
         completion: LJCompletionHandler) {
+            let urlString = "https://\(path).livejournal.com/data/rss"
             
-            guard let fullURLString = NSURL(string: path)?.absoluteString else {
+            guard let fullURLString = NSURL(string: urlString)?.absoluteString else {
                 completion(success: false, result: nil, error: nil)
                 return
             }
@@ -55,7 +56,7 @@ class LJClient {
                                 if item.name == "item" {
                                     let feedEntry = FeedEntry()
                                     feedEntry.author = author
-                                    feedEntry.pubDate = item["pubdate"].stringValue
+                                    feedEntry.pubDate = item["pubDate"].stringValue
                                     feedEntry.link = item["link"].stringValue
                                     feedEntry.description = item["description"].stringValue
                                     feedEntry.title = item["title"].stringValue

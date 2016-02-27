@@ -8,6 +8,8 @@
 
 struct Const {
     struct LJAuthorURL {
-        static let Glagolas = "https://glagolas.livejournal.com/data/rss"
+        static let Glagolas = "glagolas"
+        static let Evolutio = "evo-lutio"
+        static let Tema = "tema"
     }
 }
