@@ -1,5 +1,5 @@
 //
-//  MainCell.swift
+//  FeedCell.swift
 //  LJReader
 //
 //  Created by Alice Aponasko on 2/14/16.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-let MainCellID = "MainCell"
-let MainCellHeight: CGFloat = 200.0
+let FeedCellID = "FeedCell"
+let FeedCellHeight: CGFloat = 80.0
 
-class MainCell: UITableViewCell {
+class FeedCell: UITableViewCell {
 
     @IBOutlet weak var nameTitleLabel: UILabel!
-    @IBOutlet weak var articleTextWebView: UIWebView!
+    @IBOutlet weak var articleTitleLabel: UILabel!
+    
     
 }
