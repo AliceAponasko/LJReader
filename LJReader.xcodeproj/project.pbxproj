@@ -11,6 +11,8 @@
 		000A23B81C7AC6A500FB783F /* LJClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A23B71C7AC6A500FB783F /* LJClient.swift */; };
 		000A23BB1C7ACCEF00FB783F /* FeedEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A23BA1C7ACCEF00FB783F /* FeedEntry.swift */; };
 		003C9C5B1C81563300017236 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C9C5A1C81563300017236 /* ArticleViewController.swift */; };
+		003C9C5E1C816AA300017236 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C9C5D1C816AA300017236 /* NSDateExtension.swift */; };
+		003C9C601C816BEE00017236 /* ReadingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C9C5F1C816BEE00017236 /* ReadingListTableViewController.swift */; };
 		00DEF4A71C71330F00D8EEC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4A61C71330F00D8EEC7 /* AppDelegate.swift */; };
 		00DEF4BC1C71330F00D8EEC7 /* LJReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4BB1C71330F00D8EEC7 /* LJReaderTests.swift */; };
 		00DEF4C71C71330F00D8EEC7 /* LJReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4C61C71330F00D8EEC7 /* LJReaderUITests.swift */; };
@@ -44,6 +46,8 @@
 		000A23B71C7AC6A500FB783F /* LJClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LJClient.swift; path = Network/LJClient.swift; sourceTree = "<group>"; };
 		000A23BA1C7ACCEF00FB783F /* FeedEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedEntry.swift; path = Model/FeedEntry.swift; sourceTree = "<group>"; };
 		003C9C5A1C81563300017236 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleViewController.swift; path = Controllers/ArticleViewController.swift; sourceTree = "<group>"; };
+		003C9C5D1C816AA300017236 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateExtension.swift; path = Extensions/NSDateExtension.swift; sourceTree = "<group>"; };
+		003C9C5F1C816BEE00017236 /* ReadingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingListTableViewController.swift; path = Controllers/ReadingListTableViewController.swift; sourceTree = "<group>"; };
 		00DEF4A31C71330F00D8EEC7 /* LJReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DEF4A61C71330F00D8EEC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00DEF4B71C71330F00D8EEC7 /* LJReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		003C9C5C1C816A8D00017236 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				003C9C5D1C816AA300017236 /* NSDateExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		00DEF49A1C71330F00D8EEC7 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +142,7 @@
 		00DEF4A51C71330F00D8EEC7 /* LJReader */ = {
 			isa = PBXGroup;
 			children = (
+				003C9C5C1C816A8D00017236 /* Extensions */,
 				00DEF4E61C7136F700D8EEC7 /* Cells */,
 				00DEF4D61C71344800D8EEC7 /* Controllers */,
 				000A23B61C7AC67900FB783F /* Network */,
@@ -163,6 +176,7 @@
 			children = (
 				00DEF4D41C71341500D8EEC7 /* FeedTableViewController.swift */,
 				003C9C5A1C81563300017236 /* ArticleViewController.swift */,
+				003C9C5F1C816BEE00017236 /* ReadingListTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -387,9 +401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				000A23B81C7AC6A500FB783F /* LJClient.swift in Sources */,
+				003C9C601C816BEE00017236 /* ReadingListTableViewController.swift in Sources */,
 				00DEF4D51C71341500D8EEC7 /* FeedTableViewController.swift in Sources */,
 				003C9C5B1C81563300017236 /* ArticleViewController.swift in Sources */,
 				000A23BB1C7ACCEF00FB783F /* FeedEntry.swift in Sources */,
+				003C9C5E1C816AA300017236 /* NSDateExtension.swift in Sources */,
 				00DEF4A71C71330F00D8EEC7 /* AppDelegate.swift in Sources */,
 				00DEF4EA1C71373300D8EEC7 /* FeedCell.swift in Sources */,
 				000A23B51C7AC61A00FB783F /* Constants.swift in Sources */,

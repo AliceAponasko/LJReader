@@ -10,28 +10,66 @@ import UIKit
 
 class FeedTableViewController: UITableViewController {
     
-    @IBOutlet weak var searchBarButtonItem: UIBarButtonItem!
-    
     var articles = [FeedEntry]()
+    
+    var dateFormatter = NSDateFormatter()
+    let timeZone = NSTimeZone(abbreviation: "GMT")
     
     let ljClient = LJClient.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
+        dateFormatter.timeZone = timeZone
+        
         tableView.estimatedRowHeight = FeedCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        ljClient.get(Const.LJAuthorURL.Glagolas, parameters: nil) { (success, result, error) -> () in
-            if success {
-                guard let result = result else {
-                    return
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: "refreshFeed:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl!)
+        
+        refreshFeed(self)
+    }
+    
+    // MARK: Actions
+    
+    func refreshFeed(sender: AnyObject?) {
+        var feedResult = [FeedEntry]()
+        articles.removeAll()
+        
+        let authors = [Const.LJAuthorURL.Glagolas, Const.LJAuthorURL.Evolutio, Const.LJAuthorURL.Tema]
+        for author in authors {
+            ljClient.get(author, parameters: nil) { (success, result, error) -> () in
+                if success {
+                    guard let result = result else {
+                        return
+                    }
+                    
+                    feedResult += result
+                    self.updateWithresult(feedResult)
+                } else {
+                    self.refreshControl?.endRefreshing()
                 }
-                
-                self.articles = result
-                self.tableView.reloadData()
             }
         }
+    }
+    
+    func updateWithresult(result: [FeedEntry]) {
+        articles = result
+        articles.sortInPlace { (first, second) -> Bool in
+            let firstDate = self.dateFormatter.dateFromString(first.pubDate)
+            let secondDate = self.dateFormatter.dateFromString(second.pubDate)
+            if firstDate < secondDate {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 
     // MARK: UITableViewDataSource
@@ -73,5 +111,4 @@ class FeedTableViewController: UITableViewController {
             articleViewController.article = articles[indexPath.row]
         }
     }
-
 }
