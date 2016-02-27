@@ -10,14 +10,15 @@
 		000A23B51C7AC61A00FB783F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A23B41C7AC61A00FB783F /* Constants.swift */; };
 		000A23B81C7AC6A500FB783F /* LJClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A23B71C7AC6A500FB783F /* LJClient.swift */; };
 		000A23BB1C7ACCEF00FB783F /* FeedEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A23BA1C7ACCEF00FB783F /* FeedEntry.swift */; };
+		003C9C5B1C81563300017236 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C9C5A1C81563300017236 /* ArticleViewController.swift */; };
 		00DEF4A71C71330F00D8EEC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4A61C71330F00D8EEC7 /* AppDelegate.swift */; };
 		00DEF4BC1C71330F00D8EEC7 /* LJReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4BB1C71330F00D8EEC7 /* LJReaderTests.swift */; };
 		00DEF4C71C71330F00D8EEC7 /* LJReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4C61C71330F00D8EEC7 /* LJReaderUITests.swift */; };
-		00DEF4D51C71341500D8EEC7 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4D41C71341500D8EEC7 /* HomeTableViewController.swift */; };
+		00DEF4D51C71341500D8EEC7 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4D41C71341500D8EEC7 /* FeedTableViewController.swift */; };
 		00DEF4DB1C71346300D8EEC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DEF4D81C71346300D8EEC7 /* Assets.xcassets */; };
 		00DEF4E21C71347300D8EEC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DEF4DE1C71347300D8EEC7 /* LaunchScreen.storyboard */; };
 		00DEF4E31C71347300D8EEC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DEF4E01C71347300D8EEC7 /* Main.storyboard */; };
-		00DEF4EA1C71373300D8EEC7 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4E91C71373300D8EEC7 /* MainCell.swift */; };
+		00DEF4EA1C71373300D8EEC7 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4E91C71373300D8EEC7 /* FeedCell.swift */; };
 		96667151E255DEE95AA92B89 /* Pods_LJReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 296412967D8E58A8B32E9510 /* Pods_LJReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		000A23B41C7AC61A00FB783F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Resources/Constants.swift; sourceTree = "<group>"; };
 		000A23B71C7AC6A500FB783F /* LJClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LJClient.swift; path = Network/LJClient.swift; sourceTree = "<group>"; };
 		000A23BA1C7ACCEF00FB783F /* FeedEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedEntry.swift; path = Model/FeedEntry.swift; sourceTree = "<group>"; };
+		003C9C5A1C81563300017236 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleViewController.swift; path = Controllers/ArticleViewController.swift; sourceTree = "<group>"; };
 		00DEF4A31C71330F00D8EEC7 /* LJReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DEF4A61C71330F00D8EEC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00DEF4B71C71330F00D8EEC7 /* LJReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,12 +52,12 @@
 		00DEF4C21C71330F00D8EEC7 /* LJReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DEF4C61C71330F00D8EEC7 /* LJReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJReaderUITests.swift; sourceTree = "<group>"; };
 		00DEF4C81C71330F00D8EEC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00DEF4D41C71341500D8EEC7 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewController.swift; path = Controllers/HomeTableViewController.swift; sourceTree = "<group>"; };
+		00DEF4D41C71341500D8EEC7 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableViewController.swift; path = Controllers/FeedTableViewController.swift; sourceTree = "<group>"; };
 		00DEF4D81C71346300D8EEC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		00DEF4DA1C71346300D8EEC7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		00DEF4DF1C71347300D8EEC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00DEF4E11C71347300D8EEC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		00DEF4E91C71373300D8EEC7 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCell.swift; path = Cells/MainCell.swift; sourceTree = "<group>"; };
+		00DEF4E91C71373300D8EEC7 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedCell.swift; path = Cells/FeedCell.swift; sourceTree = "<group>"; };
 		296412967D8E58A8B32E9510 /* Pods_LJReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2CE7DEFC78A5E4AE53A8AB /* Pods-LJReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-LJReader/Pods-LJReader.release.xcconfig"; sourceTree = "<group>"; };
 		87675DB78791A38972E7F5F8 /* Pods-LJReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LJReader/Pods-LJReader.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,7 +161,8 @@
 		00DEF4D61C71344800D8EEC7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				00DEF4D41C71341500D8EEC7 /* HomeTableViewController.swift */,
+				00DEF4D41C71341500D8EEC7 /* FeedTableViewController.swift */,
+				003C9C5A1C81563300017236 /* ArticleViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -179,7 +182,7 @@
 		00DEF4E61C7136F700D8EEC7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				00DEF4E91C71373300D8EEC7 /* MainCell.swift */,
+				00DEF4E91C71373300D8EEC7 /* FeedCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -384,10 +387,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				000A23B81C7AC6A500FB783F /* LJClient.swift in Sources */,
-				00DEF4D51C71341500D8EEC7 /* HomeTableViewController.swift in Sources */,
+				00DEF4D51C71341500D8EEC7 /* FeedTableViewController.swift in Sources */,
+				003C9C5B1C81563300017236 /* ArticleViewController.swift in Sources */,
 				000A23BB1C7ACCEF00FB783F /* FeedEntry.swift in Sources */,
 				00DEF4A71C71330F00D8EEC7 /* AppDelegate.swift in Sources */,
-				00DEF4EA1C71373300D8EEC7 /* MainCell.swift in Sources */,
+				00DEF4EA1C71373300D8EEC7 /* FeedCell.swift in Sources */,
 				000A23B51C7AC61A00FB783F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
