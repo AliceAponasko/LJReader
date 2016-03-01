@@ -58,10 +58,12 @@ class ReadingListTableViewController: UITableViewController {
     
     func showEmptyResultsView() {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
+        
         let emptyResultsLabel = UILabel()
         emptyResultsLabel.text = "Your reading list is currently empty."
         emptyResultsLabel.textAlignment = .Center
         emptyResultsLabel.numberOfLines = 0
+        
         footerView.addSubview(emptyResultsLabel)
         emptyResultsLabel.translatesAutoresizingMaskIntoConstraints = false
         footerView.addConstraint(NSLayoutConstraint(item: emptyResultsLabel, attribute: .Top, relatedBy: .Equal,
@@ -72,6 +74,7 @@ class ReadingListTableViewController: UITableViewController {
             toItem: footerView, attribute: .Right, multiplier: 1, constant: 0))
         footerView.addConstraint(NSLayoutConstraint(item: emptyResultsLabel, attribute: .Left, relatedBy: .Equal,
             toItem: footerView, attribute: .Left, multiplier: 1, constant: 0))
+        
         tableView.tableFooterView = footerView
     }
     

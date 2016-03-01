@@ -40,12 +40,16 @@ class FeedTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         guard let storedAuthors = userDefaults.authors() else {
+            authors.removeAll()
+            refreshFeed(self)
             return
         }
         
         if storedAuthors.count != authors.count {
             refreshFeed(self)
         }
+        
+        authors = storedAuthors
     }
     
     // MARK: Actions
@@ -55,12 +59,11 @@ class FeedTableViewController: UITableViewController {
         articles.removeAll()
         
         guard let authors = userDefaults.authors() else {
+            tableView.reloadData()
             refreshControl?.endRefreshing()
             showEmptyResultsView()
             return
         }
-        
-        self.authors = authors
         
         for author in authors {
             ljClient.get(author, parameters: nil) { (success, result, error) -> () in
@@ -73,6 +76,7 @@ class FeedTableViewController: UITableViewController {
                     self.updateWithresult(feedResult)
                     self.hideEmptyResultsView()
                 } else {
+                    self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                     self.showEmptyResultsView()
                 }
