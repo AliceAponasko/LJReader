@@ -14,4 +14,5 @@ class FeedEntry {
     var link = ""
     var description = ""
     var author = ""
+    var imageURL = ""
 }

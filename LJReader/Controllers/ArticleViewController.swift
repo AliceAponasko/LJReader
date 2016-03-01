@@ -29,6 +29,7 @@ class ArticleViewController: UIViewController {
 }
 
 extension ArticleViewController: UIWebViewDelegate {
+    
     func webViewDidFinishLoad(webView: UIWebView) {
         articleWebView.contentMode = .ScaleAspectFit
     }

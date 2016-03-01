@@ -15,8 +15,8 @@ typealias LJCompletionHandler = (success: Bool, result: [FeedEntry]?, error: NSE
 class LJClient {
     static let sharedInstance = LJClient()
     
-    func get(path: String, parameters: Dictionary<String, AnyObject>?, completion: LJCompletionHandler) {
-        request(.GET, path: path, parameters: parameters, completion: completion)
+    func get(author: String, parameters: Dictionary<String, AnyObject>?, completion: LJCompletionHandler) {
+        request(.GET, path: author, parameters: parameters, completion: completion)
     }
     
     func request(method: Alamofire.Method,
@@ -36,9 +36,9 @@ class LJClient {
                 encoding: .JSON,
                 headers: nil)
                 .response(completionHandler: { request, response, data, error in
-                    log.debug(request)
+                    log.debug(request!.URLString)
                     
-                    if error == nil {
+                    if error == nil && response?.statusCode == 200 {
                         guard let responseData = data else {
                             completion(success: false, result: nil, error: error)
                             return
@@ -51,6 +51,7 @@ class LJClient {
                             let channel = xmlDoc.root["channel"]
                             
                             let author = channel["lj:journal"].stringValue
+                            let avatar = channel["image"]["url"].stringValue
                             
                             for item in channel.children {
                                 if item.name == "item" {
@@ -60,17 +61,18 @@ class LJClient {
                                     feedEntry.link = item["link"].stringValue
                                     feedEntry.description = item["description"].stringValue
                                     feedEntry.title = item["title"].stringValue
+                                    feedEntry.imageURL = avatar
                                     
                                     resultArray.append(feedEntry)
                                 }
                             }
                         } catch {
-                            log.error("Failed to parse feed for request: \(request) with error: \(error)")
+                            log.error("Failed to parse feed for request: \(request!.URLString) with error: \(error)")
                         }
 
                         completion(success: true, result: resultArray, error: nil)
                     } else {
-                        log.error(error)
+                        log.error("Failed to load feed for request: \(request!.URLString) with error: \(error)")
                         completion(success: false, result: nil, error: error)
                     }
                 })
