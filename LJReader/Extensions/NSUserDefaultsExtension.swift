@@ -46,7 +46,11 @@ extension NSUserDefaults {
                 }
                 
                 authors.removeAtIndex(index)
-                setAuthors(authors)
+                if authors.count > 0 {
+                    setAuthors(authors)
+                } else {
+                    removeAuthors()
+                }
             }
         }
     }
