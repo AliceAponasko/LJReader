@@ -8,55 +8,54 @@
 
 import Foundation
 
-public enum UserDefaultsKey: String {
-    case Authors = "Authors"
-}
-
 extension NSUserDefaults {
+
+    struct Key {
+        static let authors = "Authors"
+    }
     
     func authors() -> [String]? {
-        if let result = arrayForKey(UserDefaultsKey.Authors.rawValue) {
-            return result as? [String]
-        } else {
-            return nil
-        }
+        return arrayForKey(Key.authors) as? [String]
     }
     
     func addAuthor(author: String) {
-        if var authors = authors() {
-            if !authors.contains(author) {
-                authors.append(author)
-                setAuthors(authors)
-            }
-        } else {
-           setAuthors([author])
+        guard var authors = authors() else {
+            setAuthors([author])
+            return
+        }
+
+        if !authors.contains(author) {
+            authors.append(author)
+            setAuthors(authors)
         }
     }
-    
+
     func setAuthors(authors: [String]) {
-        setObject(authors, forKey: UserDefaultsKey.Authors.rawValue)
+        setObject(authors, forKey: Key.authors)
         synchronize()
     }
     
     func removeAuthor(author: String) {
-        if var authors = authors() {
-            if authors.contains(author) {
-                guard let index = authors.indexOf(author) else {
-                    return
-                }
-                
-                authors.removeAtIndex(index)
-                if authors.count > 0 {
-                    setAuthors(authors)
-                } else {
-                    removeAuthors()
-                }
+        guard var authors = authors() else {
+            return
+        }
+
+        if authors.contains(author) {
+            guard let index = authors.indexOf(author) else {
+                return
+            }
+
+            authors.removeAtIndex(index)
+            if authors.count > 0 {
+                setAuthors(authors)
+            } else {
+                removeAuthors()
             }
         }
     }
-    
+
     func removeAuthors() {
-        setObject(nil, forKey: UserDefaultsKey.Authors.rawValue)
+        setObject(nil, forKey: Key.authors)
         synchronize()
     }
 }

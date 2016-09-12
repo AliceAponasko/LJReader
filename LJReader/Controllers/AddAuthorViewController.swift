@@ -11,12 +11,14 @@ import UIKit
 class AddAuthorViewController: UIViewController {
 
     @IBOutlet weak var addAuthorTextField: UITextField!
+
+    // MARK: Properties
     
     var loadingOverlayView: UIView!
     var loadingActivityIndicator: UIActivityIndicatorView!
     
     let ljClient = LJClient.sharedInstance
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +39,11 @@ class AddAuthorViewController: UIViewController {
         
         showLoadingScreen()
         addAuthorTextField.resignFirstResponder()
-        ljClient.get(author, parameters: nil) { success, _, _ in
+        ljClient.get(author, parameters: nil) {
+            [unowned self] success, _, _ in
+
             if success {
-                self.userDefaults.addAuthor(author)
+                self.defaults.addAuthor(author)
                 self.showSuccessAlertWithTitle()
             } else {
                 self.showFailureAlertWithTitle()
@@ -53,7 +57,8 @@ class AddAuthorViewController: UIViewController {
         loadingOverlayView = UIView(frame: view.frame)
         loadingOverlayView.backgroundColor = UIColor(white: 0, alpha: 0.2)
         
-        loadingActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        loadingActivityIndicator = UIActivityIndicatorView(
+            activityIndicatorStyle: .WhiteLarge)
         loadingActivityIndicator.center = view.center
         loadingActivityIndicator.startAnimating()
         
@@ -81,28 +86,57 @@ class AddAuthorViewController: UIViewController {
     // MARK: Alert
     
     func showSuccessAlertWithTitle() {
-        let alertVC = UIAlertController(title: "YAY",
-            message: "Author was added to your reading list. Enjoy! 🎉", preferredStyle: UIAlertControllerStyle.Alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
-            self.navigationController?.popViewControllerAnimated(true)
-        }))
-        presentViewController(alertVC, animated: true, completion: nil)
+        let alertVC = UIAlertController(
+            title: "YAY",
+            message: "Author was added to your reading list. Enjoy! 🎉",
+            preferredStyle: UIAlertControllerStyle.Alert)
+
+        alertVC.addAction(UIAlertAction(
+            title: "OK",
+            style: .Default,
+            handler: {
+                [unowned self] action in
+                self.navigationController?.popViewControllerAnimated(true)
+            }))
+
+        presentViewController(
+            alertVC,
+            animated: true,
+            completion: nil)
+
         hideLoadingScreen()
     }
     
     func showFailureAlertWithTitle() {
-        let alertVC = UIAlertController(title: "Hmmm...",
-            message: "Cannot find this author 😔\nCheck the spelling and try again.", preferredStyle: UIAlertControllerStyle.Alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .Default, handler: { action in
-            self.addAuthorTextField.becomeFirstResponder()
-        }))
-        presentViewController(alertVC, animated: true, completion: nil)
+        let alertVC = UIAlertController(
+            title: "Hmmm...",
+            message: "Cannot find this author 😔\nCheck the spelling and try again.",
+            preferredStyle: UIAlertControllerStyle.Alert)
+
+        alertVC.addAction(UIAlertAction(
+            title: "OK",
+            style: .Default,
+            handler: {
+                [unowned self] action in
+                self.addAuthorTextField.becomeFirstResponder()
+            }))
+
+        presentViewController(
+            alertVC,
+            animated: true,
+            completion: nil)
+
         hideLoadingScreen()
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension AddAuthorViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+
+    func textFieldShouldReturn(
+        textField: UITextField) -> Bool {
+
         addAuthorButtonTapped(self)
         return true
     }

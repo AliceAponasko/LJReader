@@ -10,55 +10,63 @@ import UIKit
 import AlamofireImage
 
 class FeedTableViewController: UITableViewController {
-    
-    var articles = [FeedEntry]()
-    var authors = [String]()
-    
-    var dateFormatter = NSDateFormatter()
-    var cellDateFormatter = NSDateFormatter()
-    let timeZone = NSTimeZone(abbreviation: "GMT")
+
+    // MARK: Properties
     
     let ljClient = LJClient.sharedInstance
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let defaults = NSUserDefaults.standardUserDefaults()
+
+    // MARK: Delegate
+
+    private lazy var feedDelegate: FeedTableDelegate = {
+        return FeedTableDelegate(
+            dataSource: self.feedDataSource)
+    }()
+
+    private lazy var feedDataSource: FeedTableDataSource = {
+        return FeedTableDataSource()
+    }()
+
+    // MARK: Init
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
-        dateFormatter.timeZone = timeZone
-        
-        cellDateFormatter.dateStyle = .ShortStyle
-        cellDateFormatter.timeStyle = .ShortStyle
-        cellDateFormatter.doesRelativeDateFormatting = true
-        
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: "refreshFeed:", forControlEvents: .ValueChanged)
+        refreshControl?.addTarget(
+            self,
+            action: #selector(refreshFeed(_:)),
+            forControlEvents: .ValueChanged)
+
         tableView.addSubview(refreshControl!)
+
+        tableView.delegate = feedDelegate
+        tableView.dataSource = feedDataSource
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let storedAuthors = userDefaults.authors() else {
-            authors.removeAll()
+        guard let storedAuthors = defaults.authors() else {
+            feedDataSource.authors.removeAll()
             refreshFeed(self)
             return
         }
         
-        if storedAuthors.count != authors.count {
+        if storedAuthors.count != feedDataSource.authors.count {
             refreshFeed(self)
         }
         
-        authors = storedAuthors
+        feedDataSource.authors = storedAuthors
     }
-    
+
     // MARK: Actions
     
     func refreshFeed(sender: AnyObject?) {
         var feedResult = [FeedEntry]()
-        articles.removeAll()
-        
-        guard let authors = userDefaults.authors() else {
+        feedDataSource.articles.removeAll()
+
+        guard let authors = defaults.authors() else {
             tableView.reloadData()
             refreshControl?.endRefreshing()
             showEmptyResultsView()
@@ -66,7 +74,9 @@ class FeedTableViewController: UITableViewController {
         }
         
         for author in authors {
-            ljClient.get(author, parameters: nil) { (success, result, error) -> () in
+            ljClient.get(author, parameters: nil) {
+                [unowned self] success, result, error in
+
                 if success {
                     guard let result = result else {
                         return
@@ -85,81 +95,27 @@ class FeedTableViewController: UITableViewController {
     }
     
     func updateWithresult(result: [FeedEntry]) {
-        articles = result
-        articles.sortInPlace { (first, second) -> Bool in
-            let firstDate = self.dateFormatter.dateFromString(first.pubDate)
-            let secondDate = self.dateFormatter.dateFromString(second.pubDate)
-            if firstDate > secondDate {
-                return true
-            } else {
-                return false
-            }
+
+        feedDataSource.articles = result
+        feedDataSource.articles.sortInPlace {
+            (first, second) -> Bool in
+
+            let firstDate =
+                self.feedDataSource.dateFormatter.dateFromString(first.pubDate)
+            let secondDate =
+                self.feedDataSource.dateFormatter.dateFromString(second.pubDate)
+
+            return firstDate > secondDate
         }
         
         tableView.reloadData()
         refreshControl?.endRefreshing()
     }
 
-    // MARK: UITableViewDataSource
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(FeedCellID, forIndexPath: indexPath) as! FeedCell
-
-        let article = articles[indexPath.row]
-        let pubDate = dateFormatter.dateFromString(article.pubDate)!
-        cell.pubDateLabel.text = cellDateFormatter.stringFromDate(pubDate)
-        cell.nameTitleLabel.text = article.author
-        cell.nameTitleLabel.preferredMaxLayoutWidth = tableView.frame.width - 30
-        cell.nameTitleLabel.sizeToFit()
-        cell.articleTitleLabel.text = article.title
-        cell.articleTitleLabel.preferredMaxLayoutWidth = tableView.frame.width - 30
-        cell.articleTitleLabel.sizeToFit()
-        cell.avatarImageView.layer.cornerRadius = 3.0
-        cell.avatarImageView.layer.masksToBounds = true
-        cell.avatarImageView.af_setImageWithURL(NSURL(string: article.imageURL)!)
-
-        return cell
-    }
-    
-    // MARK: UITableViewDelegate
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let text = articles[indexPath.row].title
-        let messageTextWidth: CGFloat = CGRectGetWidth(tableView.frame) - FeedCellPadding
-        let attributes: NSDictionary = [ NSFontAttributeName: UIFont.systemFontOfSize(20.0) ]
-        let preferredBounds = text.boundingRectWithSize(CGSizeMake(messageTextWidth, 0),
-            options: .UsesLineFragmentOrigin, attributes: attributes as? [String : AnyObject], context: nil)
-        let calculatedHeight = FeedCellHeight - FeedCellMinTextHeight + CGRectGetHeight(preferredBounds)
-        return max(calculatedHeight, FeedCellHeight)
-    }
-    
     // MARK: Views
     
     func showEmptyResultsView() {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
-        let emptyResultsLabel = UILabel()
-        emptyResultsLabel.text = "Your feed is currently empty."
-        emptyResultsLabel.textAlignment = .Center
-        emptyResultsLabel.numberOfLines = 0
-        footerView.addSubview(emptyResultsLabel)
-        emptyResultsLabel.translatesAutoresizingMaskIntoConstraints = false
-        footerView.addConstraint(NSLayoutConstraint(item: emptyResultsLabel, attribute: .Top, relatedBy: .Equal,
-            toItem: footerView, attribute: .Top, multiplier: 1, constant: 0))
-        footerView.addConstraint(NSLayoutConstraint(item: emptyResultsLabel, attribute: .Height, relatedBy: .Equal,
-            toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: footerView.frame.height))
-        footerView.addConstraint(NSLayoutConstraint(item: emptyResultsLabel, attribute: .Right, relatedBy: .Equal,
-            toItem: footerView, attribute: .Right, multiplier: 1, constant: 0))
-        footerView.addConstraint(NSLayoutConstraint(item: emptyResultsLabel, attribute: .Left, relatedBy: .Equal,
-            toItem: footerView, attribute: .Left, multiplier: 1, constant: 0))
-        tableView.tableFooterView = footerView
+        tableView.tableFooterView = emptyResultsView("Your feed is currently empty.")
     }
     
     func hideEmptyResultsView() {
@@ -168,9 +124,13 @@ class FeedTableViewController: UITableViewController {
     
     // MARK: Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(
+        segue: UIStoryboardSegue,
+        sender: AnyObject?) {
+
         if let sender = sender as? FeedCell {
-            guard let articleViewController = segue.destinationViewController as? ArticleViewController else {
+            guard let articleViewController =
+                segue.destinationViewController as? ArticleViewController else {
                 return
             }
             
@@ -178,7 +138,7 @@ class FeedTableViewController: UITableViewController {
                 return
             }
             
-            articleViewController.article = articles[indexPath.row]
+            articleViewController.article = feedDataSource.articles[indexPath.row]
         }
     }
 }

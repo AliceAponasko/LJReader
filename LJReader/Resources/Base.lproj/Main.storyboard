@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HrF-Wp-hDM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HrF-Wp-hDM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -79,10 +79,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="X92-8g-3pH" id="7SG-9O-2nE"/>
-                            <outlet property="delegate" destination="X92-8g-3pH" id="GgA-ZZ-wYg"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Feed" id="LQs-u8-CVP">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="B2Q-8V-Kby">
@@ -227,7 +223,6 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="ZJY-fY-rj1" id="uUj-Dl-MNc"/>
                             <outlet property="delegate" destination="ZJY-fY-rj1" id="zrh-DW-nIp"/>
                         </connections>
                     </tableView>
