@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FeedEntry {
+struct FeedEntry {
     var pubDate: String = ""
     var title = ""
     var link = ""

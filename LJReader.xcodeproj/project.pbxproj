@@ -14,6 +14,10 @@
 		003C9C601C816BEE00017236 /* ReadingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C9C5F1C816BEE00017236 /* ReadingListTableViewController.swift */; };
 		003C9C621C85508000017236 /* AddAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C9C611C85508000017236 /* AddAuthorViewController.swift */; };
 		003C9C641C8552D300017236 /* NSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C9C631C8552D300017236 /* NSUserDefaultsExtension.swift */; };
+		009290411D862BCA00D8ED0E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009290401D862BCA00D8ED0E /* UIViewControllerExtension.swift */; };
+		009290441D862D6800D8ED0E /* FeedTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009290431D862D6800D8ED0E /* FeedTableDelegate.swift */; };
+		009290461D862D7500D8ED0E /* FeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009290451D862D7500D8ED0E /* FeedTableDataSource.swift */; };
+		009290491D871E0700D8ED0E /* ReadingListTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009290481D871E0700D8ED0E /* ReadingListTableDataSource.swift */; };
 		00DEF4A71C71330F00D8EEC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4A61C71330F00D8EEC7 /* AppDelegate.swift */; };
 		00DEF4BC1C71330F00D8EEC7 /* LJReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4BB1C71330F00D8EEC7 /* LJReaderTests.swift */; };
 		00DEF4C71C71330F00D8EEC7 /* LJReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4C61C71330F00D8EEC7 /* LJReaderUITests.swift */; };
@@ -22,7 +26,9 @@
 		00DEF4E21C71347300D8EEC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DEF4DE1C71347300D8EEC7 /* LaunchScreen.storyboard */; };
 		00DEF4E31C71347300D8EEC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DEF4E01C71347300D8EEC7 /* Main.storyboard */; };
 		00DEF4EA1C71373300D8EEC7 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEF4E91C71373300D8EEC7 /* FeedCell.swift */; };
-		96667151E255DEE95AA92B89 /* Pods_LJReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 296412967D8E58A8B32E9510 /* Pods_LJReader.framework */; };
+		2143EC8BEF0826C11BD99561 /* Pods_LJReaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF32982E2304EADA326B64D /* Pods_LJReaderUITests.framework */; };
+		4AF0BEA4806C5D39E08A685B /* Pods_LJReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0795D7E1F5F45B2524C90 /* Pods_LJReader.framework */; };
+		E99B18436D9DAED4313B8E0E /* Pods_LJReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5FCE514CCBE5D40B17107D /* Pods_LJReaderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,10 @@
 		003C9C5F1C816BEE00017236 /* ReadingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingListTableViewController.swift; path = Controllers/ReadingListTableViewController.swift; sourceTree = "<group>"; };
 		003C9C611C85508000017236 /* AddAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAuthorViewController.swift; path = Controllers/AddAuthorViewController.swift; sourceTree = "<group>"; };
 		003C9C631C8552D300017236 /* NSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaultsExtension.swift; path = Extensions/NSUserDefaultsExtension.swift; sourceTree = "<group>"; };
+		009290401D862BCA00D8ED0E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		009290431D862D6800D8ED0E /* FeedTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableDelegate.swift; path = Controllers/FeedTableDelegate.swift; sourceTree = "<group>"; };
+		009290451D862D7500D8ED0E /* FeedTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableDataSource.swift; path = Controllers/FeedTableDataSource.swift; sourceTree = "<group>"; };
+		009290481D871E0700D8ED0E /* ReadingListTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadingListTableDataSource.swift; path = Controllers/ReadingListTableDataSource.swift; sourceTree = "<group>"; };
 		00DEF4A31C71330F00D8EEC7 /* LJReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00DEF4A61C71330F00D8EEC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00DEF4B71C71330F00D8EEC7 /* LJReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,9 +74,15 @@
 		00DEF4DF1C71347300D8EEC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00DEF4E11C71347300D8EEC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00DEF4E91C71373300D8EEC7 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedCell.swift; path = Cells/FeedCell.swift; sourceTree = "<group>"; };
-		296412967D8E58A8B32E9510 /* Pods_LJReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D2CE7DEFC78A5E4AE53A8AB /* Pods-LJReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-LJReader/Pods-LJReader.release.xcconfig"; sourceTree = "<group>"; };
-		87675DB78791A38972E7F5F8 /* Pods-LJReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LJReader/Pods-LJReader.debug.xcconfig"; sourceTree = "<group>"; };
+		08A0795D7E1F5F45B2524C90 /* Pods_LJReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EF32982E2304EADA326B64D /* Pods_LJReaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJReaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		129C5A76121279F82022E2B1 /* Pods-LJReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LJReaderTests/Pods-LJReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B47D1B661081F2342B75801 /* Pods-LJReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LJReader/Pods-LJReader.debug.xcconfig"; sourceTree = "<group>"; };
+		4AD2B69FDE1754F65A013843 /* Pods-LJReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LJReaderTests/Pods-LJReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		57BBC702A38148B10FFAF259 /* Pods-LJReaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReaderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LJReaderUITests/Pods-LJReaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7AA116DB0A3EC3F9484DCF49 /* Pods-LJReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-LJReader/Pods-LJReader.release.xcconfig"; sourceTree = "<group>"; };
+		BB5FCE514CCBE5D40B17107D /* Pods_LJReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34AACC18BDC821D94B8BCF3 /* Pods-LJReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJReaderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LJReaderUITests/Pods-LJReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96667151E255DEE95AA92B89 /* Pods_LJReader.framework in Frameworks */,
+				4AF0BEA4806C5D39E08A685B /* Pods_LJReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99B18436D9DAED4313B8E0E /* Pods_LJReaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2143EC8BEF0826C11BD99561 /* Pods_LJReaderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +134,28 @@
 			children = (
 				003C9C5D1C816AA300017236 /* NSDateExtension.swift */,
 				003C9C631C8552D300017236 /* NSUserDefaultsExtension.swift */,
+				009290401D862BCA00D8ED0E /* UIViewControllerExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		009290421D862D5400D8ED0E /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				009290431D862D6800D8ED0E /* FeedTableDelegate.swift */,
+				009290451D862D7500D8ED0E /* FeedTableDataSource.swift */,
+				00DEF4D41C71341500D8EEC7 /* FeedTableViewController.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		009290471D871DE900D8ED0E /* Reading List */ = {
+			isa = PBXGroup;
+			children = (
+				009290481D871E0700D8ED0E /* ReadingListTableDataSource.swift */,
+				003C9C5F1C816BEE00017236 /* ReadingListTableViewController.swift */,
+			);
+			name = "Reading List";
 			sourceTree = "<group>";
 		};
 		00DEF49A1C71330F00D8EEC7 = {
@@ -127,8 +165,8 @@
 				00DEF4BA1C71330F00D8EEC7 /* LJReaderTests */,
 				00DEF4C51C71330F00D8EEC7 /* LJReaderUITests */,
 				00DEF4A41C71330F00D8EEC7 /* Products */,
-				48FECDAE7619E504312F094B /* Pods */,
-				046D8358A001CB222791ED11 /* Frameworks */,
+				C1596244D8421F6B0719AB47 /* Pods */,
+				65391FFD5A501FB44CE4ED0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,9 +215,9 @@
 		00DEF4D61C71344800D8EEC7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				00DEF4D41C71341500D8EEC7 /* FeedTableViewController.swift */,
+				009290421D862D5400D8ED0E /* Feed */,
+				009290471D871DE900D8ED0E /* Reading List */,
 				003C9C5A1C81563300017236 /* ArticleViewController.swift */,
-				003C9C5F1C816BEE00017236 /* ReadingListTableViewController.swift */,
 				003C9C611C85508000017236 /* AddAuthorViewController.swift */,
 			);
 			name = Controllers;
@@ -204,19 +242,25 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		046D8358A001CB222791ED11 /* Frameworks */ = {
+		65391FFD5A501FB44CE4ED0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				296412967D8E58A8B32E9510 /* Pods_LJReader.framework */,
+				08A0795D7E1F5F45B2524C90 /* Pods_LJReader.framework */,
+				BB5FCE514CCBE5D40B17107D /* Pods_LJReaderTests.framework */,
+				0EF32982E2304EADA326B64D /* Pods_LJReaderUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		48FECDAE7619E504312F094B /* Pods */ = {
+		C1596244D8421F6B0719AB47 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				87675DB78791A38972E7F5F8 /* Pods-LJReader.debug.xcconfig */,
-				7D2CE7DEFC78A5E4AE53A8AB /* Pods-LJReader.release.xcconfig */,
+				2B47D1B661081F2342B75801 /* Pods-LJReader.debug.xcconfig */,
+				7AA116DB0A3EC3F9484DCF49 /* Pods-LJReader.release.xcconfig */,
+				4AD2B69FDE1754F65A013843 /* Pods-LJReaderTests.debug.xcconfig */,
+				129C5A76121279F82022E2B1 /* Pods-LJReaderTests.release.xcconfig */,
+				D34AACC18BDC821D94B8BCF3 /* Pods-LJReaderUITests.debug.xcconfig */,
+				57BBC702A38148B10FFAF259 /* Pods-LJReaderUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -228,12 +272,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00DEF4CB1C71330F00D8EEC7 /* Build configuration list for PBXNativeTarget "LJReader" */;
 			buildPhases = (
-				E90D4BCC15887B57DAB58D18 /* Check Pods Manifest.lock */,
+				23A5DE7F4EF3DFDF863FE8E7 /* [CP] Check Pods Manifest.lock */,
 				00DEF49F1C71330F00D8EEC7 /* Sources */,
 				00DEF4A01C71330F00D8EEC7 /* Frameworks */,
 				00DEF4A11C71330F00D8EEC7 /* Resources */,
-				C4290CA371237B5411BF6C61 /* Embed Pods Frameworks */,
-				17C94165E5D0457443B2EAB4 /* Copy Pods Resources */,
+				41EF884A646EFCDE2F7BA0A7 /* [CP] Embed Pods Frameworks */,
+				F64B95709E129A0DA3E39422 /* [CP] Copy Pods Resources */,
+				00A2E1831D8625320020DA8B /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -248,9 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00DEF4CE1C71330F00D8EEC7 /* Build configuration list for PBXNativeTarget "LJReaderTests" */;
 			buildPhases = (
+				FFA5A4FAC1D9B06CF1AE543E /* [CP] Check Pods Manifest.lock */,
 				00DEF4B31C71330F00D8EEC7 /* Sources */,
 				00DEF4B41C71330F00D8EEC7 /* Frameworks */,
 				00DEF4B51C71330F00D8EEC7 /* Resources */,
+				F3E89C18E9CB60DD8095B285 /* [CP] Embed Pods Frameworks */,
+				A692D6E601CF234C072A6C8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,9 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00DEF4D11C71330F00D8EEC7 /* Build configuration list for PBXNativeTarget "LJReaderUITests" */;
 			buildPhases = (
+				364861E34CA7BA61C39D1763 /* [CP] Check Pods Manifest.lock */,
 				00DEF4BE1C71330F00D8EEC7 /* Sources */,
 				00DEF4BF1C71330F00D8EEC7 /* Frameworks */,
 				00DEF4C01C71330F00D8EEC7 /* Resources */,
+				7815018B636BF00F59616B00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -351,29 +401,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17C94165E5D0457443B2EAB4 /* Copy Pods Resources */ = {
+		00A2E1831D8625320020DA8B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJReader/Pods-LJReader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		C4290CA371237B5411BF6C61 /* Embed Pods Frameworks */ = {
+		23A5DE7F4EF3DFDF863FE8E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		364861E34CA7BA61C39D1763 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		41EF884A646EFCDE2F7BA0A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,14 +460,74 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJReader/Pods-LJReader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E90D4BCC15887B57DAB58D18 /* Check Pods Manifest.lock */ = {
+		7815018B636BF00F59616B00 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJReaderUITests/Pods-LJReaderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A692D6E601CF234C072A6C8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJReaderTests/Pods-LJReaderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3E89C18E9CB60DD8095B285 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJReaderTests/Pods-LJReaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F64B95709E129A0DA3E39422 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJReader/Pods-LJReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFA5A4FAC1D9B06CF1AE543E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,15 +542,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009290491D871E0700D8ED0E /* ReadingListTableDataSource.swift in Sources */,
 				000A23B81C7AC6A500FB783F /* LJClient.swift in Sources */,
 				003C9C601C816BEE00017236 /* ReadingListTableViewController.swift in Sources */,
 				00DEF4D51C71341500D8EEC7 /* FeedTableViewController.swift in Sources */,
 				003C9C5B1C81563300017236 /* ArticleViewController.swift in Sources */,
 				000A23BB1C7ACCEF00FB783F /* FeedEntry.swift in Sources */,
+				009290441D862D6800D8ED0E /* FeedTableDelegate.swift in Sources */,
 				003C9C641C8552D300017236 /* NSUserDefaultsExtension.swift in Sources */,
 				003C9C5E1C816AA300017236 /* NSDateExtension.swift in Sources */,
 				00DEF4A71C71330F00D8EEC7 /* AppDelegate.swift in Sources */,
 				003C9C621C85508000017236 /* AddAuthorViewController.swift in Sources */,
+				009290411D862BCA00D8ED0E /* UIViewControllerExtension.swift in Sources */,
+				009290461D862D7500D8ED0E /* FeedTableDataSource.swift in Sources */,
 				00DEF4EA1C71373300D8EEC7 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,9 +693,10 @@
 		};
 		00DEF4CC1C71330F00D8EEC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87675DB78791A38972E7F5F8 /* Pods-LJReader.debug.xcconfig */;
+			baseConfigurationReference = 2B47D1B661081F2342B75801 /* Pods-LJReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LJReader/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -563,9 +707,10 @@
 		};
 		00DEF4CD1C71330F00D8EEC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D2CE7DEFC78A5E4AE53A8AB /* Pods-LJReader.release.xcconfig */;
+			baseConfigurationReference = 7AA116DB0A3EC3F9484DCF49 /* Pods-LJReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LJReader/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -576,6 +721,7 @@
 		};
 		00DEF4CF1C71330F00D8EEC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AD2B69FDE1754F65A013843 /* Pods-LJReaderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = LJReaderTests/Info.plist;
@@ -588,6 +734,7 @@
 		};
 		00DEF4D01C71330F00D8EEC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 129C5A76121279F82022E2B1 /* Pods-LJReaderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = LJReaderTests/Info.plist;
@@ -600,6 +747,7 @@
 		};
 		00DEF4D21C71330F00D8EEC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D34AACC18BDC821D94B8BCF3 /* Pods-LJReaderUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = LJReaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -612,6 +760,7 @@
 		};
 		00DEF4D31C71330F00D8EEC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57BBC702A38148B10FFAF259 /* Pods-LJReaderUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = LJReaderUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

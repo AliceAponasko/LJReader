@@ -12,8 +12,12 @@ class ArticleViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var articleWebView: UIWebView!
+
+    // MARK: Properties
     
     var article: FeedEntry?
+
+    // MARK: Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +27,14 @@ class ArticleViewController: UIViewController {
             nameLabel.text = article.title
             nameLabel.preferredMaxLayoutWidth = view.frame.width
             nameLabel.sizeToFit()
-            articleWebView.loadHTMLString(article.description, baseURL: nil)
+            articleWebView.loadHTMLString(
+                article.description,
+                baseURL: nil)
         }
     }
 }
+
+// MARK: - UIWebViewDelegate
 
 extension ArticleViewController: UIWebViewDelegate {
     
